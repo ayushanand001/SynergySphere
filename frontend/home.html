@@ -79,7 +79,7 @@
         }
 
         [data-bs-theme="dark"] .sidebar .nav-link.active {
-             color: #fff !important;
+            color: #fff !important;
         }
 
         .sidebar.collapsed {
@@ -254,10 +254,10 @@
 
 <body>
     <div class="d-flex">
-        <!-- Sidebar -->
         <div class="d-flex flex-column flex-shrink-0 sidebar" id="sidebar">
             <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
-                <span class="fs-4 fw-bold sidebar-header"><i class="bi bi-gear-wide-connected me-2"></i><span class="logo-text">Synergy-Sphere</span></span>
+                <span class="fs-4 fw-bold sidebar-header"><i
+                        class="bi bi-gear-wide-connected me-2"></i><span class="logo-text">Synergy-Sphere</span></span>
             </a>
             <hr>
             <ul class="nav nav-pills flex-column mb-auto">
@@ -269,24 +269,18 @@
                 <li><a href="#" class="nav-link"><i class="bi bi-check-lg me-2"></i><span>My Tasks</span></a></li>
             </ul>
             <hr>
-            <!-- Theme Toggler -->
             <div class="d-flex align-items-center mb-3 theme-toggle">
-                <i class="bi bi-moon-stars-fill text-muted me-2"></i>
-                <div class="btn-group w-100" role="group" aria-label="Theme switcher">
-                    <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-theme-value="light">
-                        <i class="bi bi-sun-fill"></i>
-                    </button>
-                    <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-theme-value="dark">
-                        <i class="bi bi-moon-fill"></i>
-                    </button>
-                </div>
+                <button id="theme-toggle-btn" class="btn btn-outline-secondary btn-sm w-100 rounded-pill">
+                    <i class="bi bi-moon-fill"></i>
+                </button>
             </div>
             <hr>
             <div class="dropdown">
                 <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=2940&auto=format&fit=crop"
-                        alt="Profile Picture" width="32" height="32" class="rounded-circle me-2 profile-icon-container">
+                        alt="Profile Picture" width="32" height="32"
+                        class="rounded-circle me-2 profile-icon-container">
                     <strong class="profile-details">User1</strong>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
@@ -301,9 +295,7 @@
             </div>
         </div>
 
-        <!-- Main Content Area -->
         <div class="main-content flex-grow-1" id="main-content">
-            <!-- Top Header -->
             <div class="top-header">
                 <div class="d-flex align-items-center me-3">
                     <button class="btn btn-outline-secondary toggle-button me-3" id="sidebar-toggle-btn">
@@ -313,24 +305,23 @@
                         <input type="search" class="form-control" placeholder="Search projects..." aria-label="Search">
                     </form>
                 </div>
+            </div>
+
+            <div class="projects-header">
+                <h4 class="mb-0 text-muted">&gt; <span class="fw-bold">Projects</span></h4>
                 <div>
-                    <button class="btn btn-outline-secondary btn-sm me-2 rounded-pill"><i class="bi bi-three-dots"></i></button>
+                    <button class="btn btn-outline-secondary btn-sm me-2 rounded-pill"><i
+                            class="bi bi-three-dots"></i></button>
                     <button class="btn btn-primary btn-sm rounded-pill"><i class="bi bi-plus"></i> New Project</button>
                 </div>
             </div>
 
-            <!-- Projects Section Header -->
-            <div class="projects-header">
-                <h4 class="mb-0 text-muted">&gt; <span class="fw-bold">Projects</span></h4>
-            </div>
-
-            <!-- Project Cards -->
             <div class="container-fluid py-4">
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                    <!-- Project Card 1 -->
                     <div class="col">
                         <div class="card project-card shadow-sm">
-                            <img src="https://picsum.photos/200/300?random=1" class="card-img-top" alt="Project Preview">
+                            <img src="https://picsum.photos/200/300?random=1" class="card-img-top"
+                                alt="Project Preview">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center mb-2">
                                     <h6 class="card-title fw-bold mb-0">RD Services</h6>
@@ -340,7 +331,8 @@
                                             <i class="bi bi-three-dots-vertical"></i>
                                         </button>
                                         <ul class="dropdown-menu dropdown-menu-end">
-                                            <li><a class="dropdown-item" href="/frontend/edit.html"><i class="bi bi-pencil me-2"></i>Edit</a></li>
+                                            <li><a class="dropdown-item" href="/frontend/edit.html"><i
+                                                        class="bi bi-pencil me-2"></i>Edit</a></li>
                                             <li><a class="dropdown-item text-danger" href="#"><i
                                                         class="bi bi-trash me-2"></i>Delete</a></li>
                                         </ul>
@@ -371,10 +363,10 @@
                         </div>
                     </div>
 
-                    <!-- Project Card 2 -->
                     <div class="col">
                         <div class="card project-card shadow-sm">
-                            <img src="https://picsum.photos/200/300?random=2" class="card-img-top" alt="Project Preview">
+                            <img src="https://picsum.photos/200/300?random=2" class="card-img-top"
+                                alt="Project Preview">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center mb-2">
                                     <h6 class="card-title fw-bold mb-0">AI Project</h6>
@@ -384,7 +376,8 @@
                                             <i class="bi bi-three-dots-vertical"></i>
                                         </button>
                                         <ul class="dropdown-menu dropdown-menu-end">
-                                            <li><a class="dropdown-item" href="#"><i class="bi bi-pencil me-2"></i>Edit</a></li>
+                                            <li><a class="dropdown-item" href="#"><i
+                                                        class="bi bi-pencil me-2"></i>Edit</a></li>
                                             <li><a class="dropdown-item text-danger" href="#"><i
                                                         class="bi bi-trash me-2"></i>Delete</a></li>
                                         </ul>
@@ -415,10 +408,10 @@
                         </div>
                     </div>
 
-                    <!-- Project Card 3 -->
                     <div class="col">
                         <div class="card project-card shadow-sm">
-                            <img src="https://picsum.photos/200/300?random=3" class="card-img-top" alt="Project Preview">
+                            <img src="https://picsum.photos/200/300?random=3" class="card-img-top"
+                                alt="Project Preview">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center mb-2">
                                     <h6 class="card-title fw-bold mb-0">Marketing Campaign</h6>
@@ -428,7 +421,8 @@
                                             <i class="bi bi-three-dots-vertical"></i>
                                         </button>
                                         <ul class="dropdown-menu dropdown-menu-end">
-                                            <li><a class="dropdown-item" href="#"><i class="bi bi-pencil me-2"></i>Edit</a></li>
+                                            <li><a class="dropdown-item" href="#"><i
+                                                        class="bi bi-pencil me-2"></i>Edit</a></li>
                                             <li><a class="dropdown-item text-danger" href="#"><i
                                                         class="bi bi-trash me-2"></i>Delete</a></li>
                                         </ul>
@@ -468,43 +462,52 @@
         crossorigin="anonymous"></script>
 
     <script>
-        const getStoredTheme = () => localStorage.getItem('theme');
-        const setStoredTheme = theme => localStorage.setItem('theme', theme);
-
-        const getPreferredTheme = () => {
-            const storedTheme = getStoredTheme();
-            if (storedTheme) {
-                return storedTheme;
-            }
-            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        };
-
-        const setTheme = theme => {
-            if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                document.documentElement.setAttribute('data-bs-theme', 'dark');
-            } else {
-                document.documentElement.setAttribute('data-bs-theme', theme);
-            }
-        };
-
-        setTheme(getPreferredTheme());
-
-        window.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('[data-bs-theme-value]').forEach(toggle => {
-                toggle.addEventListener('click', () => {
-                    const theme = toggle.getAttribute('data-bs-theme-value');
-                    setStoredTheme(theme);
-                    setTheme(theme);
-                });
-            });
-        });
-
         document.addEventListener('DOMContentLoaded', function () {
             const sidebar = document.getElementById('sidebar');
             const mainContent = document.getElementById('main-content');
             const toggleBtn = document.getElementById('sidebar-toggle-btn');
             const topHeader = document.querySelector('.top-header');
+            const themeToggleBtn = document.getElementById('theme-toggle-btn');
 
+            // Theme switching logic
+            const getStoredTheme = () => localStorage.getItem('theme');
+            const setStoredTheme = theme => localStorage.setItem('theme', theme);
+
+            const getPreferredTheme = () => {
+                const storedTheme = getStoredTheme();
+                if (storedTheme) {
+                    return storedTheme;
+                }
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            };
+
+            const setTheme = theme => {
+                document.documentElement.setAttribute('data-bs-theme', theme);
+                updateThemeIcon(theme);
+                setStoredTheme(theme);
+            };
+
+            const updateThemeIcon = theme => {
+                const icon = themeToggleBtn.querySelector('i');
+                if (theme === 'dark') {
+                    icon.classList.remove('bi-moon-fill');
+                    icon.classList.add('bi-sun-fill');
+                } else {
+                    icon.classList.remove('bi-sun-fill');
+                    icon.classList.add('bi-moon-fill');
+                }
+            };
+
+            themeToggleBtn.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                setTheme(newTheme);
+            });
+
+            // Set the initial theme and icon
+            setTheme(getPreferredTheme());
+
+            // Sidebar and content toggling logic
             const isMobile = window.innerWidth <= 768;
             if (isMobile) {
                 sidebar.classList.add('collapsed');
@@ -522,7 +525,7 @@
                 topHeader.classList.toggle('collapsed');
             });
 
-            window.addEventListener('resize', function() {
+            window.addEventListener('resize', function () {
                 const isMobileResize = window.innerWidth <= 768;
                 if (isMobileResize) {
                     sidebar.classList.add('collapsed');
