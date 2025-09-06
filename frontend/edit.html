@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Create/Edit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="edit.css">
+</head>
+
+<body class="bg-white dark:bg-gray-900 text-gray-950 dark:text-gray-100 flex h-screen overflow-hidden">
+
+    <aside
+        class="flex-shrink-0 w-64 bg-gray-50 dark:bg-gray-800 p-6 flex flex-col justify-between border-r border-gray-100 dark:border-gray-700">
+        <div>
+            <div class="flex items-center mb-8">
+                <div class="w-10 h-10 rounded-lg border-2 border-gray-300 dark:border-gray-600 mr-3 logo-box"></div>
+                <h1 class="font-bold text-xl">Company</h1>
+            </div>
+            <nav class="flex flex-col space-y-2">
+                <a href="#"
+                    class="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 10h18M7 15h1m4 0h1m-7 4h18a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z">
+                        </path>
+                    </svg>
+                    <span>Projects</span>
+                </a>
+                <a href="#"
+                    class="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+                        </path>
+                    </svg>
+                    <span>My Tasks</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="flex flex-col space-y-4">
+            <div id="theme-toggle"
+                class="flex items-center justify-center space-x-3 p-2 rounded-full cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                <svg id="sun-icon" class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4.379 1.621a1 1 0 010 1.414l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 0zm-8.758 0a1 1 0 011.414 0L6.343 5.036a1 1 0 01-1.414 1.414L4.22 5.45a1 1 0 010-1.414zm7.743 7.743a1 1 0 01-1.414 0l-.707-.707a1 1 0 011.414-1.414l.707.707a1 1 0 010 1.414zm-8.758 0a1 1 0 01-1.414 0l-.707-.707a1 1 0 011.414-1.414l.707.707a1 1 0 010 1.414zM10 18a1 1 0 01-1-1v-1a1 1 0 112 0v1a1 1 0 01-1 1zM3 10a1 1 0 011-1h1a1 1 0 110 2H4a1 1 0 01-1-1zm14 0a1 1 0 01-1-1h-1a1 1 0 110 2h1a1 1 0 011-1zM5.621 15.621a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zM14.379 15.621a1 1 0 01-1.414 0l-.707.707a1 1 0 011.414 1.414l.707-.707a1 1 0 010-1.414z">
+                    </path>
+                </svg>
+                <svg id="moon-icon" class="w-6 h-6 text-gray-500 hidden" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+            </div>
+            <div class="flex items-center space-x-3 p-3 rounded-lg bg-gray-200 dark:bg-gray-700">
+                <div class="w-8 h-8 rounded-full border-2 border-gray-400 dark:border-gray-500"></div>
+                <div>
+                    <div class="font-medium text-sm">Test User</div>
+                    <div class="text-xs text-gray-500 dark:text-gray-400">user@mail</div>
+                </div>
+                <button
+                    class="ml-auto text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors duration-200">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M6 10a2 2 0 11-4 0 2 2 0 014 0zm6 0a2 2 0 11-4 0 2 2 0 014 0zm6 0a2 2 0 11-4 0 2 2 0 014 0z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </aside>
+
+
+    <main class="flex-1 p-8 overflow-y-auto">
+        <header class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-bold">Project Create/Edit View</h1>
+            <div class="relative w-64">
+                <input type="text" placeholder="Search........"
+                    class="w-full pl-10 pr-4 py-2 rounded-full border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-500 bg-gray-50 dark:bg-gray-800">
+                <svg class="w-5 h-5 text-gray-500 dark:text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </div>
+        </header>
+
+        <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700">
+            <header
+                class="flex justify-between items-center mb-8 pb-4 border-b border-dashed border-gray-300 dark:border-gray-600">
+                <div class="text-gray-500 dark:text-gray-400 text-sm">
+                    Projects <span class="text-blue-500">New Project</span>
+                </div>
+                <div class="flex space-x-3">
+                    <button id="discard-btn"
+                        class="px-6 py-2 rounded-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">Discard</button>
+                    <button id="save-btn"
+                        class="px-6 py-2 rounded-full bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-200 shadow-md">Save</button>
+                </div>
+            </header>
+
+            <form id="project-form" class="space-y-8">
+                <div>
+                    <label for="name" class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Name</label>
+                    <input type="text" id="name-input" class="w-full text-lg">
+                    <p id="name-error" class="text-red-500 text-sm mt-1 hidden">Project name cannot be empty.</p>
+                </div>
+
+                <div>
+                    <label for="tags" class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Tags</label>
+                    <div id="tags-container" class="flex flex-wrap items-center">
+                        <input type="text" id="tags-input" class="flex-1 min-w-0 text-lg">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="project-manager"
+                        class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Project Manager</label>
+                    <input type="text" id="project-manager-input" class="w-full text-lg">
+                </div>
+
+                <div>
+                    <label for="deadline"
+                        class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Deadline</label>
+                    <input type="date" id="deadline-input" class="w-full text-lg">
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Priority</label>
+                    <div class="flex items-center space-x-6">
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="priority" value="low"
+                                class="form-radio text-blue-500 focus:ring-blue-500">
+                            <span class="ml-2 text-sm">Low</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="priority" value="medium"
+                                class="form-radio text-blue-500 focus:ring-blue-500">
+                            <span class="ml-2 text-sm">Medium</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="priority" value="high"
+                                class="form-radio text-blue-500 focus:ring-blue-500">
+                            <span class="ml-2 text-sm">High</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Image</label>
+                    <input type="file" class="hidden" id="image-upload">
+                    <button type="button" onclick="document.getElementById('image-upload').click()"
+                        class="px-4 py-2 rounded-full border border-gray-300 dark:border-gray-600 flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+                        </svg>
+                        <span>Upload Image</span>
+                    </button>
+                </div>
+
+                <div>
+                    <label for="description"
+                        class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Description</label>
+                    <textarea id="description-input" rows="4"
+                        class="w-full border border-gray-300 dark:border-gray-600 rounded-lg p-3"></textarea>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const htmlElement = document.documentElement;
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const sunIcon = document.getElementById('sun-icon');
+            const moonIcon = document.getElementById('moon-icon');
+            const projectForm = document.getElementById('project-form');
+            const saveBtn = document.getElementById('save-btn');
+            const discardBtn = document.getElementById('discard-btn');
+            const nameInput = document.getElementById('name-input');
+            const nameError = document.getElementById('name-error');
+            const tagsInput = document.getElementById('tags-input');
+            const tagsContainer = document.getElementById('tags-container');
+
+            themeToggleBtn.addEventListener('click', () => {
+                if (htmlElement.classList.contains('dark')) {
+                    htmlElement.classList.remove('dark');
+                    htmlElement.classList.add('light');
+                    sunIcon.classList.remove('hidden');  
+                    moonIcon.classList.add('hidden');     
+                } else {
+                    htmlElement.classList.remove('light');
+                    htmlElement.classList.add('dark');
+                    sunIcon.classList.add('hidden');      
+                    moonIcon.classList.remove('hidden');  
+                }
+            });
+
+
+            saveBtn.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                if (nameInput.value.trim() === '') {
+                    nameError.classList.remove('hidden');
+                    nameInput.focus();
+                    return;
+                } else {
+                    nameError.classList.add('hidden');
+                }
+
+                const projectData = {
+                    name: nameInput.value,
+                    tags: Array.from(tagsContainer.querySelectorAll('.tag-chip span')).map(span => span.textContent),
+                    projectManager: document.getElementById('project-manager-input').value,
+                    deadline: document.getElementById('deadline-input').value,
+                    priority: document.querySelector('input[name="priority"]:checked')?.value || 'not set',
+                    description: document.getElementById('description-input').value
+                };
+
+                console.log('Project Data:', projectData);
+            });
+
+            discardBtn.addEventListener('click', () => {
+                projectForm.reset();
+                tagsContainer.querySelectorAll('.tag-chip').forEach(tag => tag.remove());
+                nameError.classList.add('hidden');
+            });
+
+            tagsInput.addEventListener('keyup', (event) => {
+                const inputValue = event.target.value.trim();
+                const key = event.key;
+
+                if (inputValue.length > 0 && (key === 'Enter' || key === ',')) {
+                    const tagText = key === ',' ? inputValue.slice(0, -1) : inputValue;
+                    if (tagText.length > 0) {
+                        createTag(tagText);
+                        tagsInput.value = '';
+                    }
+                }
+            });
+
+            function createTag(text) {
+                const tagChip = document.createElement('div');
+                tagChip.className = 'tag-chip';
+
+                const tagSpan = document.createElement('span');
+                tagSpan.textContent = text;
+                tagChip.appendChild(tagSpan);
+
+                const removeBtn = document.createElement('span');
+                removeBtn.textContent = 'x';
+                removeBtn.className = 'tag-remove';
+                removeBtn.addEventListener('click', () => {
+                    tagsContainer.removeChild(tagChip);
+                });
+                tagChip.appendChild(removeBtn);
+
+                tagsContainer.insertBefore(tagChip, tagsInput);
+            }
+        });
+    </script>
+</body>
+
+</html>

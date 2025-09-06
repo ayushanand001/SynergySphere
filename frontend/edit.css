@@ -1,0 +1,358 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark .bg-gray-50 {
+    background-color: #1a1a1a;
+}
+
+.dark .bg-gray-200 {
+    background-color: #2c2c2c;
+}
+
+.dark .bg-gray-800 {
+    background-color: #1e1e1e;
+}
+
+.dark .bg-gray-900 {
+    background-color: #2c2c2c;
+}
+
+.dark .border-gray-700 {
+    border-color: #444;
+}
+
+.dark .text-gray-400 {
+    color: #999;
+}
+
+.dark .hover:bg-gray-700:hover {
+    background-color: #333;
+}
+
+.dark input,
+.dark textarea {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border-bottom: 2px solid #666;
+}
+
+.dark input:focus,
+.dark textarea:focus {
+    border-bottom-color: #3b82f6;
+}
+
+.dark .tag-chip {
+    background-color: #3b82f6;
+    color: #ffffff;
+}
+
+.dark .bg-blue-500 {
+    background-color: #3b82f6;
+}
+
+.dark .bg-blue-600 {
+    background-color: #2563eb;
+}
+
+.dark .text-white {
+    color: #ffffff;
+}
+
+.light body {
+    background-color: #ffffff;
+    color: #111827;
+}
+
+.light .bg-gray-50 {
+    background-color: #f9fafb;
+}
+
+.light .bg-gray-100 {
+    background-color: #f3f4f6;
+}
+
+.light .bg-gray-200 {
+    background-color: #e5e7eb;
+}
+
+.light .bg-gray-300 {
+    background-color: #d1d5db;
+}
+
+.light .bg-gray-400 {
+    background-color: #9ca3af;
+}
+
+.light .bg-gray-800 {
+    background-color: #f9fafb;
+}
+
+.light .bg-gray-900 {
+    background-color: #f3f4f6;
+}
+
+.light .text-gray-50 {
+    color: #111827;
+}
+
+.light .text-gray-100 {
+    color: #1f2937;
+}
+
+.light .text-gray-200 {
+    color: #374151;
+}
+
+.light .text-gray-300 {
+    color: #4b5563;
+}
+
+.light .text-gray-400 {
+    color: #6b7280;
+}
+
+.light .text-gray-500 {
+    color: #374151;
+}
+
+.light .text-gray-600 {
+    color: #1f2937;
+}
+
+.light .text-gray-700 {
+    color: #111827;
+}
+
+.light .text-gray-950 {
+    color: #000000;
+}
+
+.light .border-gray-100 {
+    border-color: #e5e7eb;
+}
+
+.light .border-gray-300 {
+    border-color: #000;
+}
+
+.light .border-gray-400 {
+    border-color: #9ca3af;
+}
+
+.light .border-gray-700 {
+    border-color: #d1d5db;
+}
+
+.light input,
+.light textarea {
+    background-color: #ffffff;
+    color: #111827;
+    border-bottom: 2px solid #000;
+}
+
+.light input:focus,
+.light textarea:focus {
+    border-bottom-color: #000;
+}
+
+.light .tag-chip {
+    background-color: #e0e7;
+} */
+
+/* home.css */
+
+/* home.css */
+
+/* home.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Theme Styles */
+.dark body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark .bg-gray-50 {
+    background-color: #1a1a1a;
+}
+
+.dark .bg-gray-200 {
+    background-color: #2c2c2c;
+}
+
+.dark .bg-gray-800 {
+    background-color: #1e1e1e;
+}
+
+.dark .bg-gray-900 {
+    background-color: #2c2c2c;
+}
+
+.dark .border-gray-700 {
+    border-color: #444;
+}
+
+.dark .text-gray-400 {
+    color: #999;
+}
+
+.dark .hover\:bg-gray-700:hover {
+    background-color: #333;
+}
+
+.dark input,
+.dark textarea {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border-bottom: 2px solid #666;
+}
+
+.dark input:focus,
+.dark textarea:focus {
+    border-bottom-color: #3b82f6;
+}
+
+.dark .tag-chip {
+    background-color: #3b82f6;
+    color: #ffffff;
+}
+
+.dark .bg-blue-500 {
+    background-color: #3b82f6;
+}
+
+.dark .bg-blue-600 {
+    background-color: #2563eb;
+}
+
+.dark .text-white {
+    color: #ffffff;
+}
+
+/* Light Theme Styles (Updated with Classic Light Palette) */
+
+.light body {
+    background-color: #FFFFFF; /* Main Content Background */
+    color: #212529; /* Text */
+}
+
+/* Side navigation background */
+.light .bg-gray-50 {
+    background-color: #F8F9FA;
+}
+
+/* Navigation text and icons */
+.light .text-gray-400 {
+    color: #343A40;
+}
+
+/* Hover/Active navigation item */
+.light .hover\:bg-gray-100:hover,
+.light .active {
+    background-color: #E9ECEF;
+}
+
+/* Other generic light theme classes for backgrounds and text */
+.light .bg-gray-100 {
+    background-color: #FFFFFF;
+}
+
+.light .bg-gray-200 {
+    background-color: #FFFFFF;
+}
+
+.light .bg-gray-300 {
+    background-color: #FFFFFF;
+}
+
+.light .bg-gray-400 {
+    background-color: #FFFFFF;
+}
+
+.light .bg-gray-800 {
+    background-color: #FFFFFF;
+}
+
+.light .bg-gray-900 {
+    background-color: #FFFFFF;
+}
+
+.light .text-gray-50 {
+    color: #212529;
+}
+
+.light .text-gray-100 {
+    color: #212529;
+}
+
+.light .text-gray-200 {
+    color: #212529;
+}
+
+.light .text-gray-300 {
+    color: #212529;
+}
+
+.light .text-gray-500 {
+    color: #212529;
+}
+
+.light .text-gray-600 {
+    color: #212529;
+}
+
+.light .text-gray-700 {
+    color: #212529;
+}
+
+.light .text-gray-950 {
+    color: #212529;
+}
+
+.light .border-gray-100 {
+    border-color: #E9ECEF;
+}
+
+.light .border-gray-300 {
+    border-color: #E9ECEF;
+}
+
+.light .border-gray-400 {
+    border-color: #E9ECEF;
+}
+
+.light .border-gray-700 {
+    border-color: #E9ECEF;
+}
+
+.light input,
+.light textarea {
+    background-color: #FFFFFF;
+    color: #212529;
+    border-bottom: 2px solid #E9ECEF;
+}
+
+.light input:focus,
+.light textarea:focus {
+    border-bottom-color: #343A40;
+}
+
+.light .tag-chip {
+    background-color: #E9ECEF;
+    color: #343A40;
+}
