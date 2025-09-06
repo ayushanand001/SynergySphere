@@ -14,7 +14,7 @@ const pool = new Pool({
   try {
     console.log("Connected to PostgreSQL");
 
-    // users table (if your auth already created this, it's safe: IF NOT EXISTS)
+    // Users
     await client.query(`
       CREATE TABLE IF NOT EXISTS users (
         id SERIAL PRIMARY KEY,
@@ -25,16 +25,22 @@ const pool = new Pool({
       );
     `);
 
+    // Projects
     await client.query(`
       CREATE TABLE IF NOT EXISTS projects (
         id SERIAL PRIMARY KEY,
         owner_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
         name VARCHAR(100) NOT NULL,
         description TEXT,
+        tags TEXT[],
+        deadline DATE,
+        priority VARCHAR(10) CHECK (priority IN ('low','medium','high')) DEFAULT 'medium',
+        image TEXT,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       );
     `);
 
+    // Project Members
     await client.query(`
       CREATE TABLE IF NOT EXISTS project_members (
         id SERIAL PRIMARY KEY,
@@ -46,14 +52,18 @@ const pool = new Pool({
       );
     `);
 
+    // Tasks
     await client.query(`
       CREATE TABLE IF NOT EXISTS tasks (
         id SERIAL PRIMARY KEY,
         project_id INTEGER NOT NULL REFERENCES projects(id) ON DELETE CASCADE,
+        assignee_id INTEGER REFERENCES users(id) ON DELETE SET NULL,
         title VARCHAR(150) NOT NULL,
         description TEXT,
-        status VARCHAR(20) DEFAULT 'pending',   -- pending | in-progress | done
+        status VARCHAR(20) CHECK (status IN ('pending','in-progress','done')) DEFAULT 'pending',
         due_date DATE,
+        tags TEXT[],
+        image TEXT,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       );
     `);
