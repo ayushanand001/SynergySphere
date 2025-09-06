@@ -4,85 +4,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Synergy-Sphere</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <title>Login - Synergy-Sphere</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    .nav-link {
-      transition: color 0.3s ease, background-color 0.3s ease;
-    }
-
     .nav-link:hover {
       color: #fff !important;
       background-color: #0d6efd !important;
       border-radius: 8px;
+      transition: 0.3s;
     }
 
-    main {
-      min-height: 70vh;
+    .nav-link.active {
+      background-color: purple !important;
+      color: #fff !important;
+      border-radius: 8px;
     }
 
-    footer h5 {
-      font-weight: bold;
+    .card {
+      animation: fadeInUp 0.8s ease-in-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     footer ul li a:hover {
+      color: #0d6efd !important;
       text-decoration: underline;
+    }
+
+    .banner-box {
+      background: #6c757d;
+      color: #fff;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      border-radius: 8px;
     }
   </style>
 </head>
 
-<body>
+<body class="bg-light">
   <div class="container">
-    <!-- Header / Navbar -->
+    <!-- Navbar -->
     <header class="d-flex flex-wrap justify-content-between align-items-center py-3 mb-4 border-bottom">
-      <a href="/" class="d-flex align-items-center mb-2 mb-md-0 text-dark text-decoration-none">
-        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-          <use xlink:href="#bootstrap"></use>
-        </svg>
+      <a href="login.html" class="d-flex align-items-center mb-2 mb-md-0 text-dark text-decoration-none">
         <span class="fs-4 fw-bold">Synergy-Sphere</span>
       </a>
 
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class="nav-link " aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Solutions</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Work</a></li>
         <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="#" class="nav-link active">Login</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Sign Up</a></li>
+        <li class="nav-item"><a href="login.html" class="nav-link active">Login</a></li>
+        <li class="nav-item"><a href="signup.html" class="nav-link">Sign Up</a></li>
       </ul>
     </header>
 
-    <!-- Sign-in Form -->
-    <main class="d-flex justify-content-center align-items-center">
-      <div class="col-md-4 col-lg-4 col-sm-8">
-        <form class="p-4 p-md-5 border rounded-3 bg-light shadow-sm">
-          <h1 class="h3 mb-3 fw-normal text-center">Please Sign In</h1>
-
-          <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
-            <label for="floatingInput">Email address</label>
+    <!-- Login Form -->
+    <main class="d-flex justify-content-center align-items-center mb-5">
+      <div class="card p-4 shadow-lg" style="max-width: 450px; width: 100%;">
+        <div class="d-flex justify-content-between align-items-center">
+          <h3 class="mb-3">Login into account</h3>
+          <p><a href="signup.html">Signup instead</a></p>
+        </div>
+     
+        <form>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required>
           </div>
-
-          <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
-            <label for="floatingPassword">Password</label>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" required>
           </div>
-
-          <div class="checkbox mb-3">
-            <label>
-              <input type="checkbox" value="remember-me"> Remember me
-            </label>
+          <div class="mb-3">
+            <a href="#" class="text-danger">Forgot password?</a>
           </div>
-
-          <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-          <hr class="my-4">
-          <small class="text-muted">Don’t have an account? <a href="#">Sign up</a></small>
+          <button type="submit" class="btn btn-primary w-100">Login</button>
         </form>
       </div>
     </main>
 
-    <!-- Footer -->
     <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-4 py-5 my-5 border-top">
       <div class="col mb-3">
         <a href="/" class="d-flex align-items-center mb-3 text-decoration-none text-dark" aria-label="Bootstrap">
@@ -121,9 +135,6 @@
       </div>
     </footer>
   </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 
 </html>
