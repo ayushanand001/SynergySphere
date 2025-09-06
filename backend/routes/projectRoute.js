@@ -4,23 +4,32 @@ const { protect } = require("../middleware/auth");
 
 const router = express.Router();
 
-// Create a project
+// 🔹 Create a project
 router.post("/", protect, async (req, res) => {
-  const { name, description } = req.body;
+  const { name, description, tags, deadline, priority, image } = req.body;
   if (!name) return res.status(400).json({ message: "Project name is required" });
 
   try {
     const result = await pool.query(
-      "INSERT INTO projects (owner_id, name, description) VALUES ($1, $2, $3) RETURNING *",
-      [req.user, name, description || null]
+      `INSERT INTO projects (owner_id, name, description, tags, deadline, priority, image)
+       VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING *`,
+      [req.user, name, description || null, tags || null, deadline || null, priority || "medium", image || null]
     );
+
+    // also insert owner as manager in project_members
+    await pool.query(
+      `INSERT INTO project_members (project_id, user_id, role)
+       VALUES ($1,$2,'manager') ON CONFLICT DO NOTHING`,
+      [result.rows[0].id, req.user]
+    );
+
     res.status(201).json(result.rows[0]);
   } catch (err) {
     res.status(500).json({ message: "Error creating project", error: err.message });
   }
 });
 
-// Get all projects for logged-in user (owner or member)
+// 🔹 Get all projects
 router.get("/", protect, async (req, res) => {
   try {
     const result = await pool.query(
@@ -39,11 +48,10 @@ router.get("/", protect, async (req, res) => {
   }
 });
 
-// Get a single project by id
+// 🔹 Get single project
 router.get("/:id", protect, async (req, res) => {
   try {
-    const projectId = req.params.id;
-    const result = await pool.query("SELECT * FROM projects WHERE id=$1", [projectId]);
+    const result = await pool.query("SELECT * FROM projects WHERE id=$1", [req.params.id]);
     if (result.rows.length === 0) return res.status(404).json({ message: "Project not found" });
     res.json(result.rows[0]);
   } catch (err) {
@@ -51,14 +59,21 @@ router.get("/:id", protect, async (req, res) => {
   }
 });
 
-// Update a project (only owner can do this)
+// 🔹 Update project (only owner)
 router.put("/:id", protect, async (req, res) => {
-  const { name, description } = req.body;
+  const { name, description, tags, deadline, priority, image } = req.body;
   try {
-    const projectId = req.params.id;
     const result = await pool.query(
-      "UPDATE projects SET name=COALESCE($1, name), description=COALESCE($2, description) WHERE id=$3 AND owner_id=$4 RETURNING *",
-      [name || null, description || null, projectId, req.user]
+      `UPDATE projects
+       SET name=COALESCE($1, name),
+           description=COALESCE($2, description),
+           tags=COALESCE($3, tags),
+           deadline=COALESCE($4, deadline),
+           priority=COALESCE($5, priority),
+           image=COALESCE($6, image)
+       WHERE id=$7 AND owner_id=$8
+       RETURNING *`,
+      [name || null, description || null, tags || null, deadline || null, priority || null, image || null, req.params.id, req.user]
     );
 
     if (result.rows.length === 0) return res.status(403).json({ message: "Not allowed" });
@@ -68,11 +83,10 @@ router.put("/:id", protect, async (req, res) => {
   }
 });
 
-// Delete a project (only owner)
+// 🔹 Delete project
 router.delete("/:id", protect, async (req, res) => {
   try {
-    const projectId = req.params.id;
-    const result = await pool.query("DELETE FROM projects WHERE id=$1 AND owner_id=$2 RETURNING id", [projectId, req.user]);
+    const result = await pool.query("DELETE FROM projects WHERE id=$1 AND owner_id=$2 RETURNING id", [req.params.id, req.user]);
     if (result.rows.length === 0) return res.status(403).json({ message: "Not allowed" });
     res.json({ message: "Project deleted" });
   } catch (err) {
